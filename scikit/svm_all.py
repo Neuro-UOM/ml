@@ -1,11 +1,16 @@
 from numpy import genfromtxt
 y= genfromtxt('../test_data/left-only-data.csv',delimiter=',')
-Y=y[:,0]
+from scipy.fftpack import fft
+y=fft(y)
+
+y=y[1:]
+X=y[:,[0,1]]
 n=y[:,0].size
 
 import numpy as np
 t=0.1
-X=np.linspace(0.0, n*t,n)
+y=np.linspace(0.0, n*t,n)
+y=y.astype(int)
 
 #import numpy as np
 import matplotlib.pyplot as plt
