@@ -7,9 +7,17 @@ location='/home/dinuka/fyp/ml_git_repo/Data/train.csv'
 df=pd.read_csv(location,header=None)
 #columns=list(df)
 
-yf=df
-y=df.as_matrix()
+yf=df[:]
 
+test_data=df[3700:3836].append(df[-200:])
+
+for i in range(3700,3836):
+    yf.drop(i,inplace=True)
+
+for i in range((len(yf)-200),len(yf)):
+    yf.drop(i,inplace=True)
+
+y=yf.as_matrix()
 x= y[:,-1]
 
 labels=[]

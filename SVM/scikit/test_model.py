@@ -16,4 +16,14 @@ df=pd.read_csv(location,header=None)
 from scipy.fftpack import fft
 y=fft(df)
 
-print clf.predict(y[3500:4000,:14])
+#print clf.predict(y[3700:3836,:14])
+
+
+output=clf.predict(y[-200:,:14])
+
+c=0
+for i in output:
+    if(i=='left'):
+        c+=1
+        
+print 'accuracy', (200-c)/200.0*100,'%'
