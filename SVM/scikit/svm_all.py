@@ -1,11 +1,12 @@
 from numpy import genfromtxt
-y= genfromtxt('../test_data/left-only-data.csv',delimiter=',')
+y= genfromtxt('../../Data/left-only-data.csv',delimiter=',')
 from scipy.fftpack import fft
 y=fft(y)
 
 y=y[1:]
 X=y[:,[0,1]]
 n=y[:,0].size
+print X
 
 import numpy as np
 t=0.1
