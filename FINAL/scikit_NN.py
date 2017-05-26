@@ -1,5 +1,7 @@
 from abstract_MLAlgo import MLAlgo
-from sklearn.neural_network import MLPClassifier 
+from sklearn.neural_network import MLPClassifier
+from sklearn import metrics
+from sklearn.model_selection import cross_val_predict
 
 class scikit_NN(MLAlgo):
 
@@ -21,5 +23,12 @@ class scikit_NN(MLAlgo):
         return self.className + " Testing finished...\n"
 
     def predict(self, predict_data):
-        print("Predictions: ", self.clf.predict(predict_data))
+        print("Predictions: ", self.clf.predict(predict_data))  # Probabilities: clf.predict_proba
         return self.className + " Prediction finished...\n"
+
+    def cross_validate(self, train_data):
+        X_ = train_data[:,:-1]
+        Y_ = train_data[:,-1]
+        predicted = cross_val_predict(self.clf, X_, Y_, cv=10)
+        print("Cross-validation accuracy: ", metrics.accuracy_score(Y_, predicted))
+        return self.className + " Cross validation finished...\n"

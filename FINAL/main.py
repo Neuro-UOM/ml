@@ -10,5 +10,6 @@ c = scikit_NN()
 print(c.train(train_data))
 print(c.test(test_data))
 print(c.predict(train_data[100:101,:-1]))
+print(c.cross_validate(train_data))
 
 input("Press Enter to continue...")
