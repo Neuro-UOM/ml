@@ -7,4 +7,6 @@ class csvImporter:
 
     def getData(self):
         return self.data
-   
+
+
+# Using Panda : http://akuederle.com/stop-using-numpy-loadtxt
