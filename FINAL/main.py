@@ -5,6 +5,7 @@ from scikit_NaiveBayes import scikit_NaiveBayes
 from scikit_DecisionTree import scikit_DecisionTree
 from scikit_SupportVectorMachine import scikit_SupportVectorMachine
 from scikit_KNearestNeighbor import scikit_KNearestNeighbor
+from scikit_NearestCentroid import scikit_NearestCentroid
 #from scikit_GaussianProcessClassifier import scikit_GaussianProcessClassifier
 
 train_data = csvImporter('train.csv').getData()    
@@ -24,11 +25,7 @@ input("Press Enter to continue...")
 #c = scikit_NN()
 #print(c.train(train_data))
 #print(c.test(test_data))
-#print(c.predict(train_data[100:101,:-1]))
-#print(c.cross_validate(train_data))
 
 #d = scikit_NaiveBayes()
 #print(d.train(train_data))
 #print(d.test(test_data))
-#print(d.predict(train_data[100:101,:-1]))
-#print(d.cross_validate(train_data))
