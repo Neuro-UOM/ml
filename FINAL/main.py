@@ -6,6 +6,7 @@ from scikit_DecisionTree import scikit_DecisionTree
 from scikit_SupportVectorMachine import scikit_SupportVectorMachine
 from scikit_KNearestNeighbor import scikit_KNearestNeighbor
 from scikit_NearestCentroid import scikit_NearestCentroid
+from scikit_StochasticGradientDescent import scikit_StochasticGradientDescent
 #from scikit_GaussianProcessClassifier import scikit_GaussianProcessClassifier
 
 train_data = csvImporter('train.csv').getData()    
