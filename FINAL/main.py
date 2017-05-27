@@ -4,6 +4,7 @@ from scikit_NeuralNetwork import scikit_NeuralNetwork
 from scikit_NaiveBayes import scikit_NaiveBayes
 from scikit_DecisionTree import scikit_DecisionTree
 from scikit_SupportVectorMachine import scikit_SupportVectorMachine
+#from scikit_GaussianProcessClassifier import scikit_GaussianProcessClassifier
 
 train_data = csvImporter('train.csv').getData()    
 test_data = csvImporter('test.csv').getData()
