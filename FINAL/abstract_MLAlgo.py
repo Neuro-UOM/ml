@@ -11,3 +11,6 @@ class MLAlgo:
 
     @abstractmethod
     def predict(self, predict_data): pass
+
+    @abstractmethod
+    def cross_validate(self, train_data): pass
