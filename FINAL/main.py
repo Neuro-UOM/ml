@@ -8,12 +8,13 @@ from scikit_KNearestNeighbor import scikit_KNearestNeighbor
 from scikit_NearestCentroid import scikit_NearestCentroid
 from scikit_StochasticGradientDescent import scikit_StochasticGradientDescent
 #from scikit_GaussianProcessClassifier import scikit_GaussianProcessClassifier
+
 from sklearn.externals import joblib
 
 train_data = csvImporter('train.csv').getData()    
 test_data = csvImporter('test.csv').getData()
 
-#iris_data = csvImporter('IRIS.csv').getData()
+iris_data = csvImporter('IRIS.csv').getData()
 #iris_train_data = iris_data[0:80]
 #iris_test_data = iris_data[80:100]
 #iris_predict_data = iris_data[80:81,:-1]
@@ -22,14 +23,16 @@ for ML_Class in MLAlgo.__subclasses__():
     print("*** ", ML_Class.__name__, " ***\n")
 
     MLmodel = ML_Class()
-    print(MLmodel.train(train_data))
-    print(MLmodel.test(test_data))
-    print(MLmodel.predict(train_data[100:101,:-1]))
-    print(MLmodel.cross_validate(train_data))
+    #print(MLmodel.train(train_data))
+    #print(MLmodel.test(test_data))
+    #print(MLmodel.predict(train_data[100:101,:-1]))
+    print(MLmodel.cross_validate(iris_data))
+    #joblib.dump(MLmodel.clf, ML_Class.__name__ + '.pkl') 
 
-    joblib.dump(MLmodel.clf, ML_Class.__name__ + '.pkl') 
-    print("Classifier model saved to ", ML_Class.__name__ , ".pkl\n")
-    #loadClassifier = joblib.load(ML_Class.__name__ + '.pkl') 
+
+joblib.dump(MLAlgo.classifier, 'BestClassifier.pkl') 
+print("Best cross validated classifier model saved... \nAccuracy: ", MLAlgo.cross_validate_accuracy,"\n", MLAlgo.classifier.__class__)
+#loadClassifier = joblib.load('BestClassifier.pkl') 
 
 input("Press Enter to continue...")
 
@@ -39,7 +42,6 @@ s = pickle.dumps(MLmodel.clf)
 loadClassifier = pickle.loads(s)
 print(loadClassifier.predict(train_data[100:101,:-1]))
 '''
-
 
 '''
 http://scikit-learn.org/stable/tutorial/basic/tutorial.html

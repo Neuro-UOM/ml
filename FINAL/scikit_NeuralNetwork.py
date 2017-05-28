@@ -8,6 +8,13 @@ class scikit_NeuralNetwork(MLAlgo):
     def __init__(self):
         self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=2)   # Classifying to 2 labels?
         self.className = self.__class__.__name__ 
+        
+        #print(self.baseProperty)
+        #super().__init__()
+        #print(super().accuracy)
+        #super().accuracy = 100
+        #print(super().__init__().value) 
+        #MLAlgo.accuracy = 100
 
     def train(self, train_data):
         train_X = train_data[:,:-1]
@@ -31,4 +38,9 @@ class scikit_NeuralNetwork(MLAlgo):
         Y_ = train_data[:,-1]
         predicted = cross_val_predict(self.clf, X_, Y_, cv=10)
         print("Cross-validation accuracy: ", metrics.accuracy_score(Y_, predicted))
+
+        if metrics.accuracy_score(Y_, predicted) > MLAlgo.cross_validate_accuracy:
+            MLAlgo.cross_validate_accuracy = metrics.accuracy_score(Y_, predicted)
+            MLAlgo.classifier = self.clf
+            
         return self.className + " Cross validation finished...\n"
