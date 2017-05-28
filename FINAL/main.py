@@ -31,7 +31,7 @@ for ML_Class in MLAlgo.__subclasses__():
 
 
 joblib.dump(MLAlgo.classifier, 'BestClassifier.pkl') 
-print("Best cross validated classifier model saved... \nAccuracy: ", MLAlgo.cross_validate_accuracy,"\n", MLAlgo.classifier.__class__)
+print("Best cross validated classifier model saved... \nAccuracy: ", MLAlgo.cross_validate_accuracy,"\n", MLAlgo.trained_instance.__class__)
 #loadClassifier = joblib.load('BestClassifier.pkl') 
 
 input("Press Enter to continue...")

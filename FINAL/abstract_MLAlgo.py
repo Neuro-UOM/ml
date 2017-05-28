@@ -17,8 +17,9 @@ class MLAlgo:
     
     cross_validate_accuracy = 0
     classifier = object
+    trained_instance = object
 
-        '''
+    '''
     @abstractproperty
     def cross_validate_accuracy(self): pass
 
