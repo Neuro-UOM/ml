@@ -6,7 +6,7 @@ from sklearn.model_selection import cross_val_predict
 class scikit_NeuralNetwork(MLAlgo):
 
     def __init__(self):
-        self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=2)
+        self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=2)   # Classifying to 2 labels?
         self.className = self.__class__.__name__ 
 
     def train(self, train_data):
