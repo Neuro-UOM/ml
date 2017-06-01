@@ -31,4 +31,11 @@ class scikit_DecisionTree(MLAlgo):
         Y_ = train_data[:,-1]
         predicted = cross_val_predict(self.clf, X_, Y_, cv=10)
         print("Cross-validation accuracy: ", metrics.accuracy_score(Y_, predicted))
+        
+        if metrics.accuracy_score(Y_, predicted) > MLAlgo.cross_validate_accuracy:
+            MLAlgo.cross_validate_accuracy = metrics.accuracy_score(Y_, predicted)
+            MLAlgo.classifier = self.clf
+            MLAlgo.trained_instance = self
+            
+
         return self.className + " Cross validation finished...\n"
