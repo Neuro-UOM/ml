@@ -25,8 +25,8 @@ Entry point of program.
 
 RAW_DATA === Nodes: F7 F8 T7 T8 P7 P8 O1 O2
 
-CrossValidate:H    SVM 70% KNN 60% NN 33% 
-CrossValidate:TNH  SVM 55% KNN 52%
-Train:TNH Test:D   KNN 32% NaiveBayes 42% 
+CrossValidate:H         SVM 70% KNN 60% NN 33% <br/> 
+CrossValidate:TNH       SVM 55% KNN 52% <br/>
+Train:TNH Test:D        KNN 32% NaiveBayes 42% <br/>
 
 Need to: Fourier? Normalize? Preprocess: Noise?
