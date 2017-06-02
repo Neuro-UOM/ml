@@ -18,3 +18,15 @@ Sample implementation of GaussianNaiveBayes and NeuralNetworks using scikit-lear
 Entry point of program. 
   - use importer .py to setup arrays of train_data and test_data 
   - loop through all the concrete classes to train(), test()...
+
+
+
+#### Current Accuracies
+
+RAW_DATA === Nodes: F7 F8 T7 T8 P7 P8 O1 O2
+
+CrossValidate:H    SVM 70% KNN 60% NN 33% 
+CrossValidate:TNH  SVM 55% KNN 52%
+Train:TNH Test:D   KNN 32% NaiveBayes 42% 
+
+Need to: Fourier? Normalize? Preprocess: Noise?
